@@ -20,6 +20,26 @@ exports.getAll = (callback) => {
     });
 };
 
+exports.getCategories = (callback) => {
+    const sql = "SELECT DISTINCT `category` AS `name` FROM `product` ORDER BY `id` DESC";
+    database.getResult(sql, null, result=> {
+        if(result.length && result.length>0)
+        callback(result);
+        else
+        callback(null);
+    });
+};
+
+exports.getGenders = (callback) => {
+    const sql = "SELECT DISTINCT `gender` AS `name` FROM `product` ORDER BY `id` DESC";
+    database.getResult(sql, null, result=> {
+        if(result.length && result.length>0)
+        callback(result);
+        else
+        callback(null);
+    });
+};
+
 exports.insert = (product, callback) => {
     const sql = "INSERT INTO `product` VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
     database.execute(sql, [

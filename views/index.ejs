@@ -4,13 +4,21 @@
         <title>Online Clothing -Login</title>
     </head>
     <body>
-        <h3>Login Here</h3>
-        <form method="post">
-            <label>Username:</label><br>
-            <input type="text" name="username" placeholder="Enter your username"><br><br>
-            <label>Password:</label><br>
-            <input type="password" name="password" placeholder="Enter your password"><br><br>
-            <input type="submit" value="Login">
-        </form>
+        <h3>Wellcome to Online Clothing</h3>
+        <a href="/search">Search Cloths</a><br>
+
+        <h3>Cloths Categories</h3>
+        <% if(categories && categories.length>0) { %>
+        <% categories.forEach(category => { %>
+            <a href="/category/<%=category.name%>"><%=category.name%></a><br>
+        <% }) %>
+        <% } %>
+
+        <h3>Cloths By Gender</h3>
+        <% if(genders && genders.length>0) { %>
+        <% genders.forEach(gender => { %>
+            <a href="/gender/<%=gender.name%>"><%=gender.name%></a><br>
+        <% }) %>
+        <% } %>
     </body>
 </html>
