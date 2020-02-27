@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+    </head>
+    <body>
+        <h3>Update Profile</h3>
+        <form method="post">
+            <label>Name:</label><br>
+            <input type="text" name="name" placeholder="Enter your name" value="<%= logged.name %>"><br><br>
+            <label>Contact No:</label><br>
+            <input type="text" name="contact" placeholder="Enter contact no"  value="<%= logged.contact %>"><br><br>
+            <label>Username:</label><br>
+            <input type="text" name="username" placeholder="Enter your username"  value="<%= logged.username %>"><br><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" placeholder="Enter new password"><br><br>
+            <input type="submit" value="Save Changes">
+        </form>
+    </body>
+</html>

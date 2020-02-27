@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <style>
+            table.list {
+                width: 1024px;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+    
+            table.list tr>td {
+                border: 1px solid #000;
+                padding: 5px;
+            }
+            h3 {
+                display: inline;
+            }
+        </style>
+        <h3>Product Categories</h3>
+            <h3>Employee List</h3> [ <a href="/home/category/add">Add New Category</a> ]
+            <table class="list">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(categories && categories.length>0) { %>
+                    <% categories.forEach(category => { %>
+                        <tr>
+                            <td><%= category.name %></td>
+                            <td><a href="/home/category/update/<%= category.id %>">Update</a> | <a href="/home/category/delete/<%= category.id %>">Delete</a></td>
+                        </tr>
+                    <% }) %>
+                    <% } else { %>
+                    <tr>
+                        <td colspan="2">No Resuls Found</td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+       
+    </body>
+</html>
