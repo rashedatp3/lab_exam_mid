@@ -11,7 +11,7 @@ exports.getById = (id, callback) => {
 };
 
 exports.getAll = (callback) => {
-    const sql = "SELECT * FROM `category` ORDER BY `id` DESC LIMIT 0, 1";
+    const sql = "SELECT * FROM `category` ORDER BY `id` DESC";
     database.getResult(sql, null, result=> {
         if(result.length && result.length>0)
         callback(result);
