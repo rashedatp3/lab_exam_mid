@@ -19,26 +19,29 @@
                 display: inline;
             }
         </style>
-        <h3>Product Categories</h3>
-            <h3>Employee List</h3> [ <a href="/home/category/add">Add New Category</a> ]
+            <h3>Customer List</h3>
             <table class="list">
                 <thead>
                     <tr>
                         <td>Name</td>
+                        <td>Username</td>
+                        <td>Contact</td>
                         <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <% if(categories && categories.length>0) { %>
-                    <% categories.forEach(category => { %>
+                    <% if(customers && customers.length>0) { %>
+                    <% customers.forEach(customer => { %>
                         <tr>
-                            <td><%= category.name %></td>
-                            <td><a href="/home/category/update/<%= category.id %>">Update</a> | <a href="/home/category/delete/<%= category.id %>">Delete</a></td>
+                            <td><%= customer.name %></td>
+                            <td><%= customer.username %></td>
+                            <td><%= customer.contact %></td>
+                            <td><a href="/home/customer/update/<%= customer.id %>">Update</a> | <a href="/home/customer/delete/<%= customer.id %>">Delete</a></td>
                         </tr>
                     <% }) %>
                     <% } else { %>
                     <tr>
-                        <td colspan="2">No Resuls Found</td>
+                        <td colspan="4">No Results Found</td>
                     </tr>
                     <% } %>
                 </tbody>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Product</title>
+    </head>
+    <body>
+        <h3>Update Customer Information</h3>
+        <form method="post" action="/home/customer/update/<%= user.id %>">
+            <label>Name:</label><br>
+            <input type="text" name="name" placeholder="Enter your name" value="<%= user.name %>"><br><br>
+            <label>Contact No:</label><br>
+            <input type="text" name="contact" placeholder="Enter contact no"  value="<%= user.contact %>"><br><br>
+            <label>Username:</label><br>
+            <input type="text" name="username" placeholder="Enter your username"  value="<%= user.username %>"><br><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" placeholder="Enter new password"><br><br>
+            <input type="submit" value="Save Changes">
+        </form>
+    </body>
+</html>

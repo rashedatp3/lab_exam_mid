@@ -23,8 +23,8 @@ exports.getByUsername = (username, callback) => {
 
 
 exports.getCustomer = (callback) => {
-    const sql = "SELECT * FROM `users` WHERE `role` = 'customer' ORDER BY `id` DESC LIMIT 0, 1";
-    database.getResult(sql, [username], result=> {
+    const sql = "SELECT * FROM `users` WHERE `role` = 'customer' ORDER BY `id` DESC";
+    database.getResult(sql, null, result=> {
         if(result && result.length>0)
         callback(result);
         else
